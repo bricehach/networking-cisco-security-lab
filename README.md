@@ -2,149 +2,116 @@
 
 > Réseaux, Cisco et fondations réseau appliquées à la cybersécurité.
 
-Ce dépôt regroupe mes travaux autour des **réseaux informatiques, de Cisco et de la sécurité réseau**. Il ne s'agit pas d'un parcours visant uniquement l'administration réseau : l'objectif est de comprendre précisément **comment les systèmes communiquent**, comment les flux circulent, comment les segments interagissent et comment les erreurs ou attaques peuvent être observées.
+Ce dépôt regroupe mes travaux autour des **réseaux informatiques, de Cisco et de la sécurité réseau**. L’objectif est de comprendre comment les systèmes communiquent, comment les flux circulent, comment les segments interagissent et comment les erreurs ou anomalies peuvent être observées.
 
-Dans ma démarche cybersécurité, le réseau est une fondation essentielle : il permet de comprendre ce qu'un SOC surveille, ce qu'un analyste observe dans Wireshark, ce qu'un pare-feu filtre et ce qu'une segmentation cherche à protéger.
+Dans une démarche cybersécurité, le réseau aide à comprendre ce qu’un SOC surveille, ce qu’un analyste observe dans Wireshark, ce qu’un pare-feu filtre et ce qu’une segmentation cherche à protéger.
 
 > **Comprendre les flux avant de chercher à les sécuriser.**
 
 ---
 
-## Positionnement dans mon parcours
+## Positionnement
 
 ```text
-Systèmes Windows / Linux
-        ↓
-Comprendre les communications
-        ↓
-Réseaux / Cisco
+Fondamentaux réseau
         ↓
 Adressage / Subnetting
         ↓
-Switching / VLAN
+Switching / VLAN / Trunks
         ↓
 Routage / Inter-VLAN
         ↓
-Segmentation / Filtrage
+Segmentation / ACL / Pare-feu
         ↓
 Observation des flux
         ↓
 SOC / Détection / DFIR
 ```
 
-Cisco et les réseaux ne constituent donc pas une finalité séparée : ils renforcent ma compréhension des environnements que je souhaite **sécuriser, surveiller et investiguer**.
+Cisco et les réseaux renforcent ma compréhension des environnements que je souhaite **sécuriser, surveiller et investiguer**.
 
 ---
 
-## Axes de travail
+## Parcours et matières
 
-- fondamentaux réseau et modèle TCP/IP ;
-- IPv4, CIDR et subnetting ;
-- switching Ethernet ;
-- VLAN et trunks 802.1Q ;
-- routage et inter-VLAN ;
-- switch Layer 3 ;
-- dépannage méthodique ;
-- Cisco IOS ;
-- Packet Tracer ;
-- segmentation réseau ;
-- pfSense ;
-- Wireshark et observation des flux ;
-- principes de sécurité réseau.
-
----
-
-## Structure du dépôt
-
-```text
-networking-cisco-security-lab/
-│
-├── fundamentals/        # Modèles, protocoles, adressage, ports
-├── subnetting/          # IPv4, CIDR, plans d'adressage
-├── switching/           # Commutation Ethernet et tables MAC
-├── vlan-trunking/       # VLAN, access ports, trunks 802.1Q
-├── routing-layer3/      # Routage, inter-VLAN, switch L3
-├── packet-tracer-labs/  # Laboratoires et topologies Cisco
-├── troubleshooting/     # Méthodes de diagnostic et tests
-├── network-security/    # Segmentation, filtrage, pfSense
-└── traffic-analysis/    # Wireshark et lecture des flux
-```
+| Matière | Contenu |
+|---|---|
+| [Fondamentaux réseau](fundamentals/README.md) | Modèles, encapsulation, Ethernet, ARP, ICMP, TCP/UDP et ports |
+| [Adressage et subnetting](subnetting/README.md) | IPv4, CIDR, masques, sous-réseaux et plans d’adressage |
+| [Switching](switching/README.md) | Commutation Ethernet, tables MAC et ports de switch |
+| [VLAN et trunks](vlan-trunking/README.md) | VLAN, ports access, trunks 802.1Q et segmentation |
+| [Routage et Layer 3](routing-layer3/README.md) | Routage, inter-VLAN, interfaces virtuelles et switch L3 |
+| [Sécurité réseau](network-security/README.md) | ACL, filtrage, pare-feu, NAT, segmentation et pfSense |
+| [Laboratoires Packet Tracer](packet-tracer-labs/README.md) | Topologies, configurations, tests et dépannage |
+| [Troubleshooting](troubleshooting/README.md) | Diagnostic méthodique, de la couche physique aux services |
+| [Analyse de trafic](traffic-analysis/README.md) | Wireshark et lecture des échanges réseau |
+| [Révisions et examens](exams-revision/README.md) | Fiches de synthèse et exercices récapitulatifs originaux |
 
 ---
 
 ## Méthode de laboratoire
 
 ```text
-Comprendre l'objectif
+Comprendre l’objectif
         ↓
 Dessiner la topologie
         ↓
-Définir l'adressage
+Définir l’adressage
         ↓
-Câbler / configurer
+Câbler et configurer par étapes
         ↓
-Vérifier appareil par appareil
+Vérifier chaque équipement
         ↓
 Tester les communications
         ↓
-Identifier les erreurs
+Diagnostiquer les écarts
         ↓
-Corriger
-        ↓
-Valider par des tests
+Corriger et valider
         ↓
 Documenter les décisions
 ```
 
-Je cherche à conserver non seulement la configuration finale, mais également **les problèmes rencontrés, les hypothèses, les tests et les corrections**.
+Chaque laboratoire doit conserver le raisonnement, les tests et les corrections, pas seulement la configuration finale.
 
 ---
 
 ## Orientation cybersécurité
 
-Les sujets réseau étudiés ici servent directement à mieux comprendre :
-
-| Réseau | Application cybersécurité |
+| Sujet réseau | Application cybersécurité |
 |---|---|
-| Subnetting | segmentation et compréhension des périmètres |
-| VLAN | isolation logique et limitation des domaines de broadcast |
-| Routage | compréhension des chemins suivis par les flux |
-| ACL / filtrage | contrôle des communications autorisées |
-| pfSense | pare-feu, règles, NAT et segmentation |
-| Wireshark | analyse de trafic et investigation réseau |
-| Troubleshooting | distinction entre panne, mauvaise configuration et comportement anormal |
+| Subnetting | Définir et comprendre les périmètres réseau |
+| VLAN | Isoler des segments et limiter les domaines de diffusion |
+| Routage | Comprendre le chemin suivi par les flux |
+| ACL et filtrage | Contrôler les communications autorisées |
+| Pare-feu et NAT | Réduire l’exposition et contrôler les échanges entre zones |
+| Wireshark | Analyser le trafic et appuyer une investigation |
+| Troubleshooting | Distinguer une panne, une erreur de configuration et une anomalie |
 
 ---
 
 ## Environnement
 
 - Cisco Packet Tracer
-- Switches Cisco 2960
-- Switch Layer 3 Cisco 3560
-- Cisco IOS
-- pfSense
-- Wireshark
-- Windows / Linux comme postes et systèmes de test
+- Switches Cisco 2960 et switch Layer 3 Cisco 3560
+- Cisco IOS et ASA simulé dans Packet Tracer, lorsque le laboratoire le requiert
+- pfSense et Wireshark
+- Windows et Linux comme systèmes de test
+
+Les commandes et comportements propres au simulateur seront identifiés comme tels. Ils ne doivent pas être généralisés à un équipement physique sans vérification.
 
 ---
 
-## Formation
+## Formation et propriété des supports
 
-Ces travaux s'inscrivent notamment dans ma formation **Conseiller en cybersécurité à l'IFAPME de Charleroi**, ainsi que dans ma révision et consolidation des fondamentaux réseau de type CCNA.
+Ces travaux s’inscrivent notamment dans ma formation de **Conseiller en cybersécurité à l’IFAPME de Charleroi** et dans la consolidation des fondamentaux de type CCNA.
+
+Les documents publiés dans ce dépôt sont des supports pédagogiques rédigés ou remaniés pour ce projet. Les consignes et documents d’évaluation d’un établissement ne sont pas reproduits. Les exemples doivent être anonymisés et les configurations vérifiées avant publication.
 
 ---
 
 ## Objectif du dépôt
 
-Ce repository évoluera avec mes laboratoires réels. Chaque ajout devra idéalement montrer :
-
-```text
-Objectif → Topologie → Configuration → Tests → Problème → Diagnostic → Correction → Validation
-```
-
-L'objectif est de démontrer une compréhension pratique du réseau utile à la **cybersécurité, au SOC et à l'investigation**.
-
----
+Faire évoluer ce dépôt avec des cours et laboratoires compréhensibles, vérifiables et utiles à la cybersécurité, au SOC et à l’investigation réseau.
 
 ### Fabrice Hacardiaux
 
